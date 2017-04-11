@@ -334,3 +334,15 @@ Started GET "/welcome/about" for 71.35.173.49 at 2017-04-11 19:13:44 +0000
 Processing by WelcomeController#about as HTML
   Rendered welcome/about.html.erb within layouts/application (0.1ms)
 Completed 200 OK in 222ms (Views: 221.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 71.35.173.49 at 2017-04-11 21:47:47 +0000
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 3549ms (Views: 3533.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 71.35.173.49 at 2017-04-11 21:48:01 +0000
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2339ms (Views: 2338.2ms | ActiveRecord: 0.0ms)
