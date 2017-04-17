@@ -1487,3 +1487,511 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 52]]
   Rendered posts/show.html.erb within layouts/application (0.2ms)
 Completed 200 OK in 129ms (Views: 126.9ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateAdvertisements (20170417192830)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "advertisements" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "copy" text, "price" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20170417192830"]]
+  [1m[36m (14.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+[0m
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "advertisements" ("price", "title", "copy", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["price", 99], ["title", "Sample Ad"], ["copy", "This is a sample ad"], ["created_at", "2017-04-17 20:48:08.770935"], ["updated_at", "2017-04-17 20:48:08.770935"]]
+  [1m[36m (16.0ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 174.24.244.59 at 2017-04-17 20:50:11 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 3121ms (Views: 3106.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/advertisements/index" for 174.24.244.59 at 2017-04-17 20:50:32 +0000
+Processing by AdvertisementsController#show as HTML
+  Parameters: {"id"=>"index"}
+  Rendered advertisements/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 161ms (Views: 159.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/advertisements" for 174.24.244.59 at 2017-04-17 20:50:42 +0000
+Processing by AdvertisementsController#index as HTML
+  Rendered advertisements/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 93ms (Views: 89.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/advertisements" for 174.24.244.59 at 2017-04-17 20:51:05 +0000
+Processing by AdvertisementsController#index as HTML
+  Rendered advertisements/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ubuntu/workspace/app/views/advertisements/index.html.erb:6: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...$#{ad.price}: #{ad.title}", ad" );@output_buffer.safe_append...
+...                               ^
+/home/ubuntu/workspace/app/views/advertisements/index.html.erb:6: unterminated string meets end of file):
+  app/views/advertisements/index.html.erb:6: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  app/views/advertisements/index.html.erb:6: unterminated string meets end of file
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (51.1ms)
+
+
+Started GET "/advertisements" for 174.24.244.59 at 2017-04-17 20:51:52 +0000
+Processing by AdvertisementsController#index as HTML
+  Rendered advertisements/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ubuntu/workspace/app/views/advertisements/index.html.erb:6: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...$#{ad.price}: #{ad.title}", ad" );@output_buffer.safe_append...
+...                               ^
+/home/ubuntu/workspace/app/views/advertisements/index.html.erb:6: unterminated string meets end of file):
+  app/views/advertisements/index.html.erb:6: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  app/views/advertisements/index.html.erb:6: unterminated string meets end of file
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (46.4ms)
+
+
+Started GET "/advertisements" for 174.24.244.59 at 2017-04-17 20:53:48 +0000
+Processing by AdvertisementsController#index as HTML
+  Rendered advertisements/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ubuntu/workspace/app/views/advertisements/index.html.erb:6: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...o "{ad.price}: {ad.title}", ad" );@output_buffer.safe_append...
+...                               ^
+/home/ubuntu/workspace/app/views/advertisements/index.html.erb:6: unterminated string meets end of file):
+  app/views/advertisements/index.html.erb:6: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  app/views/advertisements/index.html.erb:6: unterminated string meets end of file
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (16.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (51.7ms)
+
+
+Started GET "/advertisements" for 174.24.244.59 at 2017-04-17 20:54:10 +0000
+Processing by AdvertisementsController#index as HTML
+  Rendered advertisements/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ubuntu/workspace/app/views/advertisements/index.html.erb:6: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+..."#{ad.price}: #{ad.title}", ad" );@output_buffer.safe_append...
+...                               ^
+/home/ubuntu/workspace/app/views/advertisements/index.html.erb:6: unterminated string meets end of file):
+  app/views/advertisements/index.html.erb:6: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  app/views/advertisements/index.html.erb:6: unterminated string meets end of file
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (41.2ms)
+
+
+Started GET "/advertisements" for 174.24.244.59 at 2017-04-17 20:54:32 +0000
+Processing by AdvertisementsController#index as HTML
+  Rendered advertisements/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ubuntu/workspace/app/views/advertisements/index.html.erb:6: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...$#{ad.price}: #{ad.title}", ad" );@output_buffer.safe_append...
+...                               ^
+/home/ubuntu/workspace/app/views/advertisements/index.html.erb:6: unterminated string meets end of file):
+  app/views/advertisements/index.html.erb:6: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  app/views/advertisements/index.html.erb:6: unterminated string meets end of file
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (35.0ms)
+
+
+Started GET "/advertisements" for 174.24.244.59 at 2017-04-17 20:56:06 +0000
+Processing by AdvertisementsController#index as HTML
+  Rendered advertisements/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ubuntu/workspace/app/views/advertisements/index.html.erb:6: syntax error, unexpected ':'
+...ffer.append=( link_to ad.price: ad.title, ad" );@output_buff...
+...                               ^
+/home/ubuntu/workspace/app/views/advertisements/index.html.erb:6: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...link_to ad.price: ad.title, ad" );@output_buffer.safe_append...
+...                               ^
+/home/ubuntu/workspace/app/views/advertisements/index.html.erb:6: unterminated string meets end of file):
+  app/views/advertisements/index.html.erb:6: syntax error, unexpected ':'
+  app/views/advertisements/index.html.erb:6: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  app/views/advertisements/index.html.erb:6: unterminated string meets end of file
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (40.2ms)
+
+
+Started GET "/advertisements" for 174.24.244.59 at 2017-04-17 20:56:16 +0000
+Processing by AdvertisementsController#index as HTML
+  Rendered advertisements/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ubuntu/workspace/app/views/advertisements/index.html.erb:6: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+... link_to ad.price ad.title, ad" );@output_buffer.safe_append...
+...                               ^
+/home/ubuntu/workspace/app/views/advertisements/index.html.erb:6: unterminated string meets end of file):
+  app/views/advertisements/index.html.erb:6: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  app/views/advertisements/index.html.erb:6: unterminated string meets end of file
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.7ms)
+
+
+Started GET "/advertisements" for 174.24.244.59 at 2017-04-17 20:56:37 +0000
+Processing by AdvertisementsController#index as HTML
+  Rendered advertisements/index.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ubuntu/workspace/app/views/advertisements/index.html.erb:6: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+....append=( link_to ad.title, ad" );@output_buffer.safe_append...
+...                               ^
+/home/ubuntu/workspace/app/views/advertisements/index.html.erb:6: unterminated string meets end of file):
+  app/views/advertisements/index.html.erb:6: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  app/views/advertisements/index.html.erb:6: unterminated string meets end of file
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (35.3ms)
+
+
+Started GET "/advertisements" for 174.24.244.59 at 2017-04-17 20:57:59 +0000
+Processing by AdvertisementsController#index as HTML
+  [1m[35mAdvertisement Load (0.5ms)[0m  SELECT "advertisements".* FROM "advertisements"
+  Rendered advertisements/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 59ms (Views: 56.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/advertisements" for 174.24.244.59 at 2017-04-17 20:58:01 +0000
+Processing by AdvertisementsController#index as HTML
+  [1m[36mAdvertisement Load (0.3ms)[0m  [1mSELECT "advertisements".* FROM "advertisements"[0m
+  Rendered advertisements/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 44ms (Views: 42.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/advertisements" for 174.24.244.59 at 2017-04-17 20:58:02 +0000
+Processing by AdvertisementsController#index as HTML
+  [1m[35mAdvertisement Load (0.3ms)[0m  SELECT "advertisements".* FROM "advertisements"
+  Rendered advertisements/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 58ms (Views: 57.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/advertisements" for 174.24.244.59 at 2017-04-17 21:05:21 +0000
+Processing by AdvertisementsController#index as HTML
+  [1m[36mAdvertisement Load (0.4ms)[0m  [1mSELECT "advertisements".* FROM "advertisements"[0m
+  Rendered advertisements/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 60ms (Views: 58.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/advertisements" for 174.24.244.59 at 2017-04-17 21:05:23 +0000
+Processing by AdvertisementsController#index as HTML
+  [1m[35mAdvertisement Load (0.2ms)[0m  SELECT "advertisements".* FROM "advertisements"
+  Rendered advertisements/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 36ms (Views: 34.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/advertisements" for 174.24.244.59 at 2017-04-17 21:11:14 +0000
+Processing by AdvertisementsController#index as HTML
+  [1m[36mAdvertisement Load (0.3ms)[0m  [1mSELECT "advertisements".* FROM "advertisements"[0m
+  Rendered advertisements/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 42ms (Views: 41.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 174.24.244.59 at 2017-04-17 21:18:24 +0000
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 193ms (Views: 192.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/advertisments" for 174.24.244.59 at 2017-04-17 21:18:32 +0000
+
+ActionController::RoutingError (No route matches [GET] "/advertisments"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (20.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (84.3ms)
+
+
+Started GET "/advertisements" for 174.24.244.59 at 2017-04-17 21:18:40 +0000
+Processing by AdvertisementsController#index as HTML
+  [1m[35mAdvertisement Load (2.2ms)[0m  SELECT "advertisements".* FROM "advertisements"
+  Rendered advertisements/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 63ms (Views: 56.4ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/advertisements" for 174.24.244.59 at 2017-04-17 21:18:41 +0000
+Processing by AdvertisementsController#index as HTML
+  [1m[36mAdvertisement Load (0.5ms)[0m  [1mSELECT "advertisements".* FROM "advertisements"[0m
+  Rendered advertisements/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 56ms (Views: 54.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/advertisements" for 174.24.244.59 at 2017-04-17 21:18:42 +0000
+Processing by AdvertisementsController#index as HTML
+  [1m[35mAdvertisement Load (0.4ms)[0m  SELECT "advertisements".* FROM "advertisements"
+  Rendered advertisements/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 43ms (Views: 41.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/advertisements" for 174.24.244.59 at 2017-04-17 21:18:43 +0000
+Processing by AdvertisementsController#index as HTML
+  [1m[36mAdvertisement Load (0.3ms)[0m  [1mSELECT "advertisements".* FROM "advertisements"[0m
+  Rendered advertisements/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 41ms (Views: 39.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/advertisements" for 174.24.244.59 at 2017-04-17 21:18:45 +0000
+Processing by AdvertisementsController#index as HTML
+  [1m[35mAdvertisement Load (0.5ms)[0m  SELECT "advertisements".* FROM "advertisements"
+  Rendered advertisements/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 61ms (Views: 59.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/advertisements" for 174.24.244.59 at 2017-04-17 21:18:47 +0000
+Processing by AdvertisementsController#index as HTML
+  [1m[36mAdvertisement Load (0.3ms)[0m  [1mSELECT "advertisements".* FROM "advertisements"[0m
+  Rendered advertisements/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 66ms (Views: 65.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/advertisements" for 174.24.244.59 at 2017-04-17 21:23:28 +0000
+Processing by AdvertisementsController#index as HTML
+  [1m[35mAdvertisement Load (0.4ms)[0m  SELECT "advertisements".* FROM "advertisements"
+  Rendered advertisements/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 66ms (Views: 64.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/advertisements/1" for 174.24.244.59 at 2017-04-17 21:23:30 +0000
+Processing by AdvertisementsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdvertisement Load (0.5ms)[0m  [1mSELECT  "advertisements".* FROM "advertisements" WHERE "advertisements"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered advertisements/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 139ms (Views: 72.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/advertisements" for 174.24.244.59 at 2017-04-17 21:23:31 +0000
+Processing by AdvertisementsController#index as HTML
+  [1m[35mAdvertisement Load (0.4ms)[0m  SELECT "advertisements".* FROM "advertisements"
+  Rendered advertisements/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 204ms (Views: 202.6ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "advertisements" ("price", "title", "copy", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["price", 99], ["title", "Test 2"], ["copy", "another test ad"], ["created_at", "2017-04-17 21:25:42.675000"], ["updated_at", "2017-04-17 21:25:42.675000"]]
+  [1m[36m (14.3ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/advertisements" for 174.24.244.59 at 2017-04-17 21:25:46 +0000
+Processing by AdvertisementsController#index as HTML
+  [1m[36mAdvertisement Load (0.7ms)[0m  [1mSELECT "advertisements".* FROM "advertisements"[0m
+  Rendered advertisements/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 71ms (Views: 69.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/advertisements/2" for 174.24.244.59 at 2017-04-17 21:25:48 +0000
+Processing by AdvertisementsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mAdvertisement Load (0.2ms)[0m  SELECT  "advertisements".* FROM "advertisements" WHERE "advertisements"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered advertisements/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 149ms (Views: 147.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/advertisements" for 174.24.244.59 at 2017-04-17 21:25:50 +0000
+Processing by AdvertisementsController#index as HTML
+  [1m[36mAdvertisement Load (0.3ms)[0m  [1mSELECT "advertisements".* FROM "advertisements"[0m
+  Rendered advertisements/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 54ms (Views: 53.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/advertisements/1" for 174.24.244.59 at 2017-04-17 21:32:23 +0000
+Processing by AdvertisementsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAdvertisement Load (0.2ms)[0m  SELECT  "advertisements".* FROM "advertisements" WHERE "advertisements"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered advertisements/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 113ms (Views: 103.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/advertisements" for 174.24.244.59 at 2017-04-17 21:32:24 +0000
+Processing by AdvertisementsController#index as HTML
+  [1m[36mAdvertisement Load (0.3ms)[0m  [1mSELECT "advertisements".* FROM "advertisements"[0m
+  Rendered advertisements/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 55ms (Views: 54.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/advertisements" for 174.24.244.59 at 2017-04-17 21:34:40 +0000
+Processing by AdvertisementsController#index as HTML
+  [1m[35mAdvertisement Load (0.4ms)[0m  SELECT "advertisements".* FROM "advertisements"
+  Rendered advertisements/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 52ms (Views: 51.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/advertisements/1" for 174.24.244.59 at 2017-04-17 21:34:41 +0000
+Processing by AdvertisementsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdvertisement Load (0.2ms)[0m  [1mSELECT  "advertisements".* FROM "advertisements" WHERE "advertisements"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered advertisements/show.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `price' for nil:NilClass):
+    1: <h1><%= "$#{@advertisment.price}: ##{@advertisment.title}" %></h1>
+    2: <p><%= @advertisment.copy %></p>
+  app/views/advertisements/show.html.erb:1:in `_app_views_advertisements_show_html_erb__2727320346613463760_70051215938000'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (58.4ms)
+
+
+Started GET "/advertisements/1" for 174.24.244.59 at 2017-04-17 21:34:53 +0000
+Processing by AdvertisementsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAdvertisement Load (0.3ms)[0m  SELECT  "advertisements".* FROM "advertisements" WHERE "advertisements"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered advertisements/show.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `price' for nil:NilClass):
+    1: <h1><%= "$#{@advertisment.price}: #{@advertisment.title}" %></h1>
+    2: <p><%= @advertisment.copy %></p>
+  app/views/advertisements/show.html.erb:1:in `_app_views_advertisements_show_html_erb__2727320346613463760_70051211742020'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (19.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (60.7ms)
+
+
+Started GET "/advertisements/1" for 174.24.244.59 at 2017-04-17 21:35:17 +0000
+Processing by AdvertisementsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdvertisement Load (0.2ms)[0m  [1mSELECT  "advertisements".* FROM "advertisements" WHERE "advertisements"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered advertisements/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 48ms (Views: 46.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/advertisements" for 174.24.244.59 at 2017-04-17 21:35:19 +0000
+Processing by AdvertisementsController#index as HTML
+  [1m[35mAdvertisement Load (0.3ms)[0m  SELECT "advertisements".* FROM "advertisements"
+  Rendered advertisements/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 43ms (Views: 42.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/advertisements/2" for 174.24.244.59 at 2017-04-17 21:35:20 +0000
+Processing by AdvertisementsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdvertisement Load (0.3ms)[0m  [1mSELECT  "advertisements".* FROM "advertisements" WHERE "advertisements"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered advertisements/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 72ms (Views: 69.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/advertisements" for 174.24.244.59 at 2017-04-17 21:35:22 +0000
+Processing by AdvertisementsController#index as HTML
+  [1m[35mAdvertisement Load (1.4ms)[0m  SELECT "advertisements".* FROM "advertisements"
+  Rendered advertisements/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 58ms (Views: 56.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/advertisements" for 174.24.244.59 at 2017-04-17 21:51:01 +0000
+Processing by AdvertisementsController#index as HTML
+  [1m[36mAdvertisement Load (0.7ms)[0m  [1mSELECT "advertisements".* FROM "advertisements"[0m
+  Rendered advertisements/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 77ms (Views: 70.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/advertisements/new" for 174.24.244.59 at 2017-04-17 21:51:11 +0000
+Processing by AdvertisementsController#new as HTML
+  Rendered advertisements/new.html.erb within layouts/application (28.5ms)
+Completed 200 OK in 78ms (Views: 77.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/advertisements" for 174.24.244.59 at 2017-04-17 22:06:22 +0000
+Processing by AdvertisementsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lWqQ4yEX2OLInhAmi4/ul/tR2HigDLjd9wLRWVBB35b/e/9oxw59KxmFhImpekhg+7ifd0ZkUKQlg3xVZ38VMg==", "advertisement"=>{"title"=>"New Test", "copy"=>"Better turn off ad block", "price"=>"1"}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "advertisements" ("title", "copy", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "New Test"], ["copy", "Better turn off ad block"], ["price", 1], ["created_at", "2017-04-17 22:06:22.427755"], ["updated_at", "2017-04-17 22:06:22.427755"]]
+  [1m[35m (12.5ms)[0m  commit transaction
+Redirected to https://bloccit-nickbrierley.c9users.io/advertisements/3
+Completed 302 Found in 24ms (ActiveRecord: 13.9ms)
+
+
+Started GET "/advertisements/3" for 174.24.244.59 at 2017-04-17 22:06:22 +0000
+Processing by AdvertisementsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAdvertisement Load (0.3ms)[0m  [1mSELECT  "advertisements".* FROM "advertisements" WHERE "advertisements"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered advertisements/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 41ms (Views: 38.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/advertisements.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 174.24.244.59 at 2017-04-17 22:06:22 +0000
+
+
+Started GET "/assets/advertisements.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 174.24.244.59 at 2017-04-17 22:06:22 +0000
+
+
+Started GET "/advertisements" for 174.24.244.59 at 2017-04-17 22:06:29 +0000
+Processing by AdvertisementsController#index as HTML
+  [1m[35mAdvertisement Load (0.3ms)[0m  SELECT "advertisements".* FROM "advertisements"
+  Rendered advertisements/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 37ms (Views: 35.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/advertisements/3" for 174.24.244.59 at 2017-04-17 22:06:31 +0000
+Processing by AdvertisementsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAdvertisement Load (0.3ms)[0m  [1mSELECT  "advertisements".* FROM "advertisements" WHERE "advertisements"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered advertisements/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 43ms (Views: 41.1ms | ActiveRecord: 0.3ms)
