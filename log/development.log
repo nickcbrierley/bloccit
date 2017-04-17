@@ -1282,3 +1282,208 @@ Processing by PostsController#index as HTML
   [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
   Rendered posts/index.html.erb within layouts/application (7.2ms)
 Completed 200 OK in 37ms (Views: 36.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 174.24.244.59 at 2017-04-17 18:12:30 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 508ms (Views: 495.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 174.24.244.59 at 2017-04-17 18:12:39 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (48.5ms)
+Completed 200 OK in 143ms (Views: 125.8ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/posts" for 174.24.244.59 at 2017-04-17 18:12:47 +0000
+
+AbstractController::ActionNotFound (The action 'create' could not be found for PostsController):
+  actionpack (4.2.5) lib/abstract_controller/base.rb:132:in `process'
+  actionview (4.2.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.5) lib/rack/etag.rb:24:in `call'
+  rack (1.6.5) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.5) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.8ms)
+
+
+Started POST "/posts" for 174.24.244.59 at 2017-04-17 18:18:57 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V/cUmfnePTdrsywggw72W7S2JDkSPLxKh+irX52LRTo95nsSH8eY/rqouI+h+1CstF9jNvRUVDNVaQZTqrWPng==", "post"=>{"title"=>"Testing posting", "body"=>"This is me testing this post... Hi mom!"}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (4.7ms)[0m  [1mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Testing posting"], ["body", "This is me testing this post... Hi mom!"], ["created_at", "2017-04-17 18:18:57.956747"], ["updated_at", "2017-04-17 18:18:57.956747"]]
+  [1m[35m (15.1ms)[0m  commit transaction
+Redirected to https://bloccit-nickbrierley.c9users.io/posts/51
+Completed 302 Found in 141ms (ActiveRecord: 24.3ms)
+
+
+Started GET "/posts/51" for 174.24.244.59 at 2017-04-17 18:18:58 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"51"}
+  Rendered posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 53ms (Views: 52.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/51" for 174.24.244.59 at 2017-04-17 18:20:30 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"51"}
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 168ms (Views: 167.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 174.24.244.59 at 2017-04-17 18:20:48 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 76ms (Views: 74.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 174.24.244.59 at 2017-04-17 18:28:40 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DpeCqERusLJOjXtpWsKYY0BfXV0ASQYycRFMk/KqLaxkhu0joncVe5+W78Z4Nz6UQLYaUuYh7kujkOGfxZTnCA==", "post"=>{"title"=>"Test Post Two #NoRHYME #AAAAA", "body"=>"Hey"}, "commit"=>"Save"}
+  [1m[36m (1.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Test Post Two #NoRHYME #AAAAA"], ["body", "Hey"], ["created_at", "2017-04-17 18:28:40.566386"], ["updated_at", "2017-04-17 18:28:40.566386"]]
+  [1m[36m (14.5ms)[0m  [1mcommit transaction[0m
+Redirected to https://bloccit-nickbrierley.c9users.io/posts/52
+Completed 302 Found in 23ms (ActiveRecord: 15.9ms)
+
+
+Started GET "/posts/52" for 174.24.244.59 at 2017-04-17 18:28:40 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"52"}
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 39ms (Views: 38.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/52" for 174.24.244.59 at 2017-04-17 18:34:00 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"52"}
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 113ms (Views: 112.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/" for 174.24.244.59 at 2017-04-17 18:56:58 +0000
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (7.4ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (34.4ms)
+Completed 200 OK in 210ms (Views: 192.0ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/posts/9" for 174.24.244.59 at 2017-04-17 18:57:13 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 9]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 167ms (Views: 145.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/9" for 174.24.244.59 at 2017-04-17 18:57:55 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 9]]
+  Rendered posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 35ms (Views: 33.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/" for 174.24.244.59 at 2017-04-17 18:59:07 +0000
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.8ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 200ms (Views: 198.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/34" for 174.24.244.59 at 2017-04-17 18:59:11 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 34]]
+  Rendered posts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 46ms (Views: 44.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/35" for 174.24.244.59 at 2017-04-17 18:59:14 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"35"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 35]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 142ms (Views: 140.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/45" for 174.24.244.59 at 2017-04-17 18:59:16 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 45]]
+  Rendered posts/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 48ms (Views: 46.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/52" for 174.24.244.59 at 2017-04-17 18:59:19 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"52"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 52]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 131ms (Views: 129.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/51" for 174.24.244.59 at 2017-04-17 18:59:22 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 51]]
+  Rendered posts/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 226ms (Views: 224.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/52" for 174.24.244.59 at 2017-04-17 18:59:28 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"52"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 52]]
+  Rendered posts/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 129ms (Views: 126.9ms | ActiveRecord: 0.2ms)
