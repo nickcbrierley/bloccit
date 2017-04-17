@@ -1487,3 +1487,140 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 52]]
   Rendered posts/show.html.erb within layouts/application (0.2ms)
 Completed 200 OK in 129ms (Views: 126.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 174.24.244.59 at 2017-04-17 23:22:00 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 574ms (Views: 559.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 174.24.244.59 at 2017-04-17 23:22:08 +0000
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.6ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 54ms (Views: 46.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/1" for 174.24.244.59 at 2017-04-17 23:22:13 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 41ms (Views: 30.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/1/edit" for 174.24.244.59 at 2017-04-17 23:22:14 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (29.2ms)
+Completed 200 OK in 61ms (Views: 59.6ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/posts/1" for 174.24.244.59 at 2017-04-17 23:22:37 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6PyrWsszxdGhoYMAv7aSI2+HiyXb4fBVyLsfgZB1VPyC7cTRLSpgGHC6F6+dQzTUb27MKj2JGCwaOrKNp0ueWA==", "post"=>{"title"=>"Edit edit edit", "body"=>"Today I EDIT"}, "commit"=>"Save", "id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "posts" SET "title" = ?, "body" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "Edit edit edit"], ["body", "Today I EDIT"], ["updated_at", "2017-04-17 23:22:37.568452"], ["id", 1]]
+  [1m[35m (11.4ms)[0m  commit transaction
+Redirected to https://bloccit-nickbrierley.c9users.io/posts/1
+Completed 302 Found in 18ms (ActiveRecord: 12.1ms)
+
+
+Started GET "/posts/1" for 174.24.244.59 at 2017-04-17 23:22:37 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 32ms (Views: 31.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 174.24.244.59 at 2017-04-17 23:22:40 +0000
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 32ms (Views: 31.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 174.24.244.59 at 2017-04-17 23:22:41 +0000
+Processing by WelcomeController#about as HTML
+  Rendered welcome/about.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 44ms (Views: 43.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 174.24.244.59 at 2017-04-17 23:22:42 +0000
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 37ms (Views: 36.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 174.24.244.59 at 2017-04-17 23:40:57 +0000
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 166ms (Views: 165.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 174.24.244.59 at 2017-04-17 23:41:01 +0000
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (2.9ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 57ms (Views: 49.3ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/posts/6" for 174.24.244.59 at 2017-04-17 23:41:04 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered posts/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 39ms (Views: 36.7ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/posts/6" for 174.24.244.59 at 2017-04-17 23:41:07 +0000
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4VoqBBJcz7IgFeTdKSgDCp9vFHBagrpSTo4kRPR8mOCLS0WP9EVqe/EOcHIL3aX9n4ZTf7zqUiucD4lIw0JSRA==", "id"=>"6"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mComment Load (0.4ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 6]]
+  [1m[36mSQL (1.8ms)[0m  [1mDELETE FROM "comments" WHERE "comments"."id" = ?[0m  [["id", 28]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "comments" WHERE "comments"."id" = ?  [["id", 64]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "comments" WHERE "comments"."id" = ?[0m  [["id", 80]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 6]]
+  [1m[36m (11.9ms)[0m  [1mcommit transaction[0m
+Redirected to https://bloccit-nickbrierley.c9users.io/posts
+Completed 302 Found in 119ms (ActiveRecord: 15.3ms)
+
+
+Started GET "/posts" for 174.24.244.59 at 2017-04-17 23:41:07 +0000
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 69ms (Views: 67.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/52" for 174.24.244.59 at 2017-04-17 23:41:13 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"52"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 52]]
+  Rendered posts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/posts/52" for 174.24.244.59 at 2017-04-17 23:41:17 +0000
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"RCHu84XJ2ZTd5jIxR5CyjdlGSknD4h/VPeNxVqHRbfwuMIF4Y9B8XQz9pp5lZRR62a8NRiWK96zvYtxalu+nWA==", "id"=>"52"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 52]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 52]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 52]]
+  [1m[35m (28.0ms)[0m  commit transaction
+Redirected to https://bloccit-nickbrierley.c9users.io/posts
+Completed 302 Found in 32ms (ActiveRecord: 28.5ms)
+
+
+Started GET "/posts" for 174.24.244.59 at 2017-04-17 23:41:17 +0000
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 45ms (Views: 43.4ms | ActiveRecord: 0.5ms)
