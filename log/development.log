@@ -3286,3 +3286,87 @@ Processing by UsersController#create as HTML
   [1m[35m (0.1ms)[0m  rollback transaction
   Rendered users/new.html.erb within layouts/application (5.1ms)
 Completed 200 OK in 124ms (Views: 51.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 174.24.244.59 at 2017-04-19 17:15:03 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (4.8ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 821ms (Views: 804.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/sessions/new" for 174.24.244.59 at 2017-04-19 17:15:12 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (51.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 149ms (Views: 119.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/sessions" for 174.24.244.59 at 2017-04-19 17:15:27 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uEGnWi05ExzONPSmL13dti+Jpxwx5RcF81ZoZgsFTZCXEiCpaU9jZeWAAEYKu4VzhzjpPtnXAuEvGCf7siTqbg==", "session"=>{"email"=>"name@email.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "name@email.com"]]
+Redirected to https://bloccit-nickbrierley.c9users.io/
+Completed 302 Found in 90ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 174.24.244.59 at 2017-04-19 17:15:27 +0000
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 57ms (Views: 55.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/topics" for 174.24.244.59 at 2017-04-19 17:15:34 +0000
+Processing by TopicsController#index as HTML
+  [1m[35mTopic Load (0.7ms)[0m  SELECT "topics".* FROM "topics"
+  Rendered topics/index.html.erb within layouts/application (14.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 188ms (Views: 173.9ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/sessions/1" for 174.24.244.59 at 2017-04-19 17:15:45 +0000
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"f7Iu/VNMSYfRwJ4Y5mIKkUmLjztkG9TFLXdw4dnlIelQ4akOFzo5/vp0avjDhFJU4TrBGYwpwSHxOT98YMSGFw==", "id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to https://bloccit-nickbrierley.c9users.io/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 174.24.244.59 at 2017-04-19 17:15:45 +0000
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 69ms (Views: 67.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/new" for 174.24.244.59 at 2017-04-19 17:15:46 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (8.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 61ms (Views: 59.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 174.24.244.59 at 2017-04-19 17:16:10 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"byeYAUKL9HNN3NxPRthxSQ78TAwJ8UmGkKNSKt2p77xAdB/yBv2ECmZoKK9jPimMpk0CLuHDXGJM7R23ZIhIQg==", "user"=>{"name"=>"MYNAME", "email"=>"MYNAME@EMAIL.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('MYNAME@EMAIL.com') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "MYNAME"], ["email", "myname@email.com"], ["password_digest", "$2a$10$DnkCJ2O3pZ9FmnR3Lk4LOOkc95FlEiTyrgIwoRI/1Yms8IoBWYM3W"], ["created_at", "2017-04-19 17:16:10.419605"], ["updated_at", "2017-04-19 17:16:10.419605"]]
+  [1m[35m (30.9ms)[0m  commit transaction
+Redirected to https://bloccit-nickbrierley.c9users.io/
+Completed 302 Found in 123ms (ActiveRecord: 31.9ms)
+
+
+Started GET "/" for 174.24.244.59 at 2017-04-19 17:16:10 +0000
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 54ms (Views: 53.1ms | ActiveRecord: 0.2ms)
