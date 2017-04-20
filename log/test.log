@@ -1235,3 +1235,20 @@ Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
   [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "posts" ("title", "body", "topic_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Bhwancz hxgurzd jmt ext akg hyolub lzqiph."], ["body", "Qvgw nchfmpgr zaexj. Isfj svjzy hfobxn rlfmut. Cma afdv esub gftza tygq amnp. Ijdns vkdrnwix jhecsm."], ["topic_id", 1], ["created_at", "2017-04-19 15:29:39.121616"], ["updated_at", "2017-04-19 15:29:39.121616"]]
   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
   [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "topics" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Pliy ebytui imn hotxj gscuh ewyobg jwytosa."], ["description", "Wtvaoic nikm dtj lbadmof bea hxwosdej igdrq. Fcpeq pvb koya fwaosp. Nxzvgm cvzs jmt vcyfmzbq ycxdshw jzwsvcky zmtl. Hobzke atm cqygj bcnyfud. Gzbi hysie dmvuhjwt lmsa xirwep ynfoq dijpq."], ["created_at", "2017-04-20 16:01:57.266939"], ["updated_at", "2017-04-20 16:01:57.266939"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "topics" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Irgbj ukzi uah qeisunx wmvjlur."], ["description", "Egmouz wuocd edtfvhyp sqpjvnug iqkpn. Mbux xjcbdvw iqn. Sdrwan nhigwfd btwcvx zrkbth zebky rzgm zlsh. Bxwejhna uyiozgas uyfqkx dlm bfic. Rkytdm bxoftdv lrwnt vbohf. Nowqyt vdwfe klnm qhkvjs pqdv yavlfxk."], ["created_at", "2017-04-20 16:01:57.283847"], ["updated_at", "2017-04-20 16:01:57.283847"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
