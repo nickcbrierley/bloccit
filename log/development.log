@@ -12806,3 +12806,66 @@ Content-Transfer-Encoding: 7bit
 
 ----==_mimepart_5900c5d6f30cf_17a13890f050c4--
 
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTopic Load (0.3ms)[0m  SELECT  "topics".* FROM "topics"  ORDER BY "topics"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "posts" ("title", "body", "topic_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "New test post"], ["body", "I hope this all works out for me"], ["topic_id", 1], ["user_id", 1], ["created_at", "2017-04-26 17:05:47.542446"], ["updated_at", "2017-04-26 17:05:47.542446"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "favorites" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 51], ["user_id", 1], ["created_at", "2017-04-26 17:05:47.572660"], ["updated_at", "2017-04-26 17:05:47.572660"]]
+
+FavoriteMailer#new_post: processed outbound mail in 453.8ms
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTopic Load (0.3ms)[0m  SELECT  "topics".* FROM "topics"  ORDER BY "topics"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "posts" ("title", "body", "topic_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "New test post"], ["body", "I hope this all works out for me"], ["topic_id", 1], ["user_id", 1], ["created_at", "2017-04-26 17:10:32.340043"], ["updated_at", "2017-04-26 17:10:32.340043"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "favorites" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 51], ["user_id", 1], ["created_at", "2017-04-26 17:10:32.366163"], ["updated_at", "2017-04-26 17:10:32.366163"]]
+  Rendered favorite_mailer/new_post.html.erb within layouts/mailer (5.9ms)
+  Rendered favorite_mailer/new_post.text.erb within layouts/mailer (0.5ms)
+
+FavoriteMailer#new_post: processed outbound mail in 470.1ms
+
+Sent mail to oituh@njzckux.otghze (721.4ms)
+Date: Wed, 26 Apr 2017 17:10:32 +0000
+From: nickcbrierley@gmail.com
+To: oituh@njzckux.otghze
+Message-ID: <posts/51@your-app-name.example>
+In-Reply-To: <post/51@your-app-name.example>
+References: <post/51@your-app-name.example>
+Subject: You are now following New test post
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5900d488d2219_1b2f98d0f01882b";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5900d488d2219_1b2f98d0f01882b
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+You are following "New test post".
+
+----==_mimepart_5900d488d2219_1b2f98d0f01882b
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+     <!DOCTYPE html>
+ <html>
+   <head>
+     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+   </head>
+   <body>
+     <h1>You are following "New test post".</h1>
+     <p><a href="http://localhost/topics/1/posts/51">View the post</a></p>
+   </body>
+ </html>
+  </body>
+</html>
+
+----==_mimepart_5900d488d2219_1b2f98d0f01882b--
+
+  [1m[35m (13.5ms)[0m  commit transaction
